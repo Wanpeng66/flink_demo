@@ -45,7 +45,6 @@ public class WordCount {
     private static void dataSetApi() throws Exception {
         ExecutionEnvironment executionEnvironment = ExecutionEnvironment.getExecutionEnvironment();
 
-
         DataSource<String> stringDataSource = executionEnvironment.readTextFile(filePath);
 
         AggregateOperator<Tuple2<String, Integer>> sum = stringDataSource.flatMap(new FlatMapFunction<String, Tuple2<String, Integer>>() {
